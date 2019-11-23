@@ -1,10 +1,11 @@
 <?php
+
 require 'vendor/autoload.php';
 use AfricasTalking\SDK\AfricasTalking;
 
 // Set your app credentials
-$username   = "MyAppsUsername";
-$apiKey     = "MyAppAPIKey";
+$username   = "nakurucluster";
+$apiKey     = "43deb3f082a21775f30004805af8fe5c01f59d04a0496707126ed219f51ba45b";
 
 // Initialize the SDK
 $AT         = new AfricasTalking($username, $apiKey);
@@ -13,13 +14,13 @@ $AT         = new AfricasTalking($username, $apiKey);
 $sms        = $AT->sms();
 
 // Set the numbers you want to send to in international format
-$recipients = "+254711XXXYYY,+254733YYYZZZ";
+$recipients = $_POST['recipient'];
 
 // Set your message
-$message    = "I'm a lumberjack and its ok, I sleep all night and I work all day";
+$message    = $_POST['message'];
 
 // Set your shortCode or senderId
-$from       = "myShortCode or mySenderId";
+$from       = NULL;
 
 try {
     // Thats it, hit send and we'll take care of the rest
